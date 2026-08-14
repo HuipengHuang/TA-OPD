@@ -1,0 +1,3 @@
+ python generate_vllm.py --model_path /home/huanghp/LLMs/opd/dapo17k_sampled_token_llama_8b_from_r1_8b --model_beautiful_name dapo17k_sampled_token_llama_8b_from_r1_8b --max_tokens 8192 --temperature 0.7 --top_p 0.95 --n 8 --gpu_memory_utilization 0.9 --save_generated_text True --tensor_parallel_size 4 --input_file ./evaluation_data/valid.without_mmlu_pro.parquet
+
+ python generate_vllm.py --model_path /home/huanghp/LLMs/opd/dapo17k_normalized_top16_llama_8b_from_r1_8b --model_beautiful_name dapo17k_normalized_top16_llama_8b_from_r1_8b --max_tokens 8192 --temperature 0.7 --top_p 0.95 --n 1 --gpu_memory_utilization 0.9 --save_generated_text True --tensor_parallel_size 4 --input_file ./evaluation_data/valid.mmlu_pro.parquet
