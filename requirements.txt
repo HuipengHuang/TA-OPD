@@ -53,8 +53,6 @@ fastapi-cli==0.0.30
 fastapi-cloud-cli==0.22.2
 fastar==0.11.0
 filelock==3.29.7
-flash-attn==2.8.1
-flashinfer-python==0.3.1
 frozendict==2.4.7
 frozenlist==1.8.0
 fsspec==2026.4.0
@@ -269,3 +267,4 @@ xgrammar==0.1.25
 xxhash==3.8.1
 yarl==1.24.2
 zipp==4.1.0
+flashinfer-python==0.3.1

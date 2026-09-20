@@ -63,7 +63,20 @@ conda create -n taopd python=3.12 -y
 conda activate taopd
 
 cd TA-OPD
-python -m pip install   --ignore-requires-python   --no-deps   --force-reinstall   -r ~/requirements.txt
+
+python -m pip install \
+    torch==2.8.0 \
+    setuptools==79.0.1 \
+    wheel packaging ninja psutil
+
+curl -fL --retry 3 --connect-timeout 20 \
+  -H "Accept: application/octet-stream" \
+  -o flash_attn-2.8.1+cu12torch2.8cxx11abiTRUE-cp312-cp312-linux_x86_64.whl \
+  "https://api.github.com/repos/Dao-AILab/flash-attention/releases/assets/309735649?download=1"
+
+python -m pip install ./flash_attn-2.8.1+cu12torch2.8cxx11abiTRUE-cp312-cp312-linux_x86_64.whl
+
+python -m pip install   --ignore-requires-python   --no-deps   -r ./requirements.txt
 
 cd verl
 pip3 install --no-deps -e .
